@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/lblNome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5" />
+
+    <TextView
+        android:id="@+id/lblCalculo"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4" />
+
+    <ImageButton
+        android:id="@+id/btnOpcoes"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/ic_menu" />
+
+</LinearLayout>

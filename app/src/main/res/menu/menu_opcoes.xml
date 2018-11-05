@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mn_calcular"
+        android:title="Calcular" />
+    <item
+        android:id="@+id/mn_editar"
+        android:title="Editar" />
+    <item
+        android:id="@+id/mn_remover"
+        android:title="Remover" />
+</menu>
