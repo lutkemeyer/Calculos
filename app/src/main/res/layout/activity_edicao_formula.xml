@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome:" />
+        android:text="@string/lbl_nome" />
 
     <EditText
         android:id="@+id/txtNome"
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fórmula:" />
+        android:text="@string/lbl_formula" />
 
     <EditText
         android:id="@+id/txtFormula"
@@ -41,13 +41,13 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:onClick="onClickCalcular"
-            android:text="Calcular" />
+            android:text="@string/btn_calcular" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickValidar"
-            android:text="Validar" />
+            android:text="@string/btn_validar" />
 
         <Button
             android:id="@+id/btnSalvar"
@@ -55,9 +55,7 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:onClick="onClickSalvar"
-            android:text="Salvar" />
-
+            android:text="@string/btn_salvar" />
     </LinearLayout>
-
 
 </LinearLayout>

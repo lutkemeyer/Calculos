@@ -8,4 +8,10 @@
     <string name="toast_campos_vazios">Campos vazios</string>
     <string name="toast_calculo_salvo">Calculo salvo</string>
     <string name="toast_preencha_todos_campos">Preencha todos os campos</string>
+    <string name="lbl_resultado">Resultado</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_validar">Validar</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="lbl_formula">Fórmula:</string>
+    <string name="lbl_nome">Nome:</string>
 </resources>
