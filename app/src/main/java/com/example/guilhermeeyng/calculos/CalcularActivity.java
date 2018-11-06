@@ -72,7 +72,7 @@ public class CalcularActivity extends AppCompatActivity {
 
                 lblNomeVariavel.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 txtValorVariavel.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                txtValorVariavel.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                txtValorVariavel.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
                 txtValorVariavel.addTextChangedListener(listenerDigitacao);
 
