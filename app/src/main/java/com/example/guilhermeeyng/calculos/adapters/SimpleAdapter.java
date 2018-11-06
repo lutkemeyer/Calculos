@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.example.guilhermeeyng.calculos.BancoDeDados;
 import com.example.guilhermeeyng.calculos.CalcularActivity;
 import com.example.guilhermeeyng.calculos.EdicaoActivity;
 import com.example.guilhermeeyng.calculos.R;
@@ -27,13 +28,10 @@ public class SimpleAdapter extends BaseAdapter {
     private ArrayList<Calculo> calculos;
     private Activity activity;
 
-    public SimpleAdapter(Activity activity){
+    public SimpleAdapter(Activity activity, ArrayList<Calculo> calculos){
         super();
         this.activity = activity;
-        calculos = new ArrayList<>(Arrays.asList(
-                new Calculo("Matematica", "(nota1+nota2+nota3)/3"),
-                new Calculo("Portugues", "(nota1+nota2+nota3)/3"),
-                new Calculo("Ingles", "(nota1+nota2+nota3)/3")));
+        this.calculos = calculos;
     }
 
     @Override
@@ -79,17 +77,17 @@ public class SimpleAdapter extends BaseAdapter {
                                 Bundle argsCalcular = new Bundle();
                                 argsCalcular.putSerializable("parametro-calculo", calculos.get(position));
                                 itCalcular.putExtras(argsCalcular);
-                                activity.startActivity(itCalcular);
+                                activity.startActivityForResult(itCalcular, 0);
                                 break;
                             case R.id.mn_editar:
                                 Intent itEditar = new Intent(activity, EdicaoActivity.class);
                                 Bundle argsEditar = new Bundle();
                                 argsEditar.putSerializable("parametro-calculo", calculos.get(position));
                                 itEditar.putExtras(argsEditar);
-                                activity.startActivity(itEditar);
+                                activity.startActivityForResult(itEditar, 0);
                                 break;
                             case R.id.mn_remover:
-                                calculos.remove(position);
+                                BancoDeDados.CALCULOS.remove(position);
                                 notifyDataSetChanged();
                                 break;
                         }
@@ -105,4 +103,5 @@ public class SimpleAdapter extends BaseAdapter {
 
         return view;
     }
+
 }

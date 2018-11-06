@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".CalcularActivity">
 
+    <TextView
+        android:id="@+id/lblFormula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textSize="18sp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,7 +35,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Resultado" />
+            android:text="Resultado"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblResultado"
@@ -37,26 +46,12 @@
             android:textSize="24sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnCalcular"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClickCalcular"
-            android:text="Calcular" />
-
-        <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClickVoltar"
-            android:text="Voltar" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="onClickCalcular"
+        android:text="Calcular" />
 
 </LinearLayout>

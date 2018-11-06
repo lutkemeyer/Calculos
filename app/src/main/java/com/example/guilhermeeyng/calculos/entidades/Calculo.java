@@ -1,9 +1,12 @@
 package com.example.guilhermeeyng.calculos.entidades;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 import library.Expression;
 
@@ -14,14 +17,11 @@ public class Calculo implements Serializable{
     public Calculo(String nome, Expression expressao) {
         this.nome = nome;
         this.expressao = expressao;
-
-        this.expressao.setVariavel("nota1", 1);
-        this.expressao.setVariavel("nota2", 2);
-        this.expressao.setVariavel("nota3", 3);
     }
 
     public Calculo(String nome, String expressao){
-        this(nome, new Expression(expressao));
+        this(nome);
+        setExpressao(expressao);
     }
 
     public Calculo(String nome) {
@@ -29,6 +29,7 @@ public class Calculo implements Serializable{
     }
 
     public Calculo() {
+        this("");
     }
 
     public String getNome(){
@@ -54,16 +55,29 @@ public class Calculo implements Serializable{
         return expressao.getVariables();
     }
 
+    public void setExpressao(String s){
+        for(String string :  s.replaceAll("[()/*-+.]", " ").split(" ")){
+            if(Pattern.compile("[a-zA-Z]{1,}").matcher(string).find()){
+                expressao.setVariavel(string, 0);
+            }
+        }
+        expressao.setExpression(s);
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
     public void setVariavel(String v, double val){
         expressao.setVariavel(v,val);
     }
 
-    public boolean isValid(){
-        try {
-            double resultado = expressao.resolve();
-            return resultado >= 0;
-        }catch (Exception e){
-            return false;
-        }
+    @Override
+    public String toString() {
+        return "Calculo{" +
+                "nome='" + nome + '\'' +
+                ", expressao=" + expressao +
+                '}';
     }
+
 }

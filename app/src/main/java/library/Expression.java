@@ -148,4 +148,12 @@ public class Expression implements Serializable{
 	public String getExpression() {
 		return expression;
 	}
+
+    @Override
+    public String toString() {
+        return "Expression{" +
+                "expression='" + expression + '\'' +
+                ", variables=" + variables +
+                '}';
+    }
 }
