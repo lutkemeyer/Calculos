@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,10 +19,12 @@
         </activity>
         <activity
             android:name=".CalcularActivity"
-            android:label="@string/nome_tela_calcular"/>
+            android:label="@string/nome_tela_calcular"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".EdicaoActivity"
-            android:label="@string/nome_tela_edicao"/>
+            android:label="@string/nome_tela_edicao"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
