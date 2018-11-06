@@ -95,7 +95,11 @@ public class EdicaoActivity extends AppCompatActivity {
     public void onClickSalvar(View view){
         if(validar()){
             calculo.setExpressao(txtFormula.getText().toString());
-            BancoDeDados.CALCULOS.add(calculo);
+            if(isEditando){
+                BancoDeDados.atualizar(calculo);
+            }else{
+                BancoDeDados.adicionar(calculo);
+            }
             toast(getString(R.string.toast_calculo_salvo));
             onBackPressed();
         }

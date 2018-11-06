@@ -87,7 +87,7 @@ public class SimpleAdapter extends BaseAdapter {
                                 activity.startActivityForResult(itEditar, 0);
                                 break;
                             case R.id.mn_remover:
-                                BancoDeDados.CALCULOS.remove(position);
+                                BancoDeDados.remover(position);
                                 notifyDataSetChanged();
                                 break;
                         }

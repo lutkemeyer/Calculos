@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculos</string>
+    <string name="app_name">MedianSolution</string>
     <string name="nome_tela_edicao">Editar</string>
     <string name="nome_tela_calcular">Calcular</string>
     <string name="parametro">parametro-calculo</string>

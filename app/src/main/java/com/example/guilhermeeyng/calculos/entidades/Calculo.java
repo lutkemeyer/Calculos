@@ -56,12 +56,17 @@ public class Calculo implements Serializable{
     }
 
     public void setExpressao(String s){
+        this.expressao.getVariables().clear();
         for(String string :  s.replaceAll("[()/*-+.]", " ").split(" ")){
             if(Pattern.compile("[a-zA-Z]{1,}").matcher(string).find()){
                 expressao.setVariavel(string, 0);
             }
         }
         expressao.setExpression(s);
+    }
+
+    public String getExpressao(){
+        return expressao.getExpression();
     }
 
     public void setNome(String nome){

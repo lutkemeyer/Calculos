@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listaCalculos = findViewById(R.id.listView);
         new BancoDeDados();
-        listaCalculos.setAdapter(new SimpleAdapter(MainActivity.this, BancoDeDados.CALCULOS));
+        listaCalculos.setAdapter(new SimpleAdapter(MainActivity.this, BancoDeDados.getCALCULOS()));
     }
     public void adicionaFormula(View view){
         Intent intent = new Intent(this, EdicaoActivity.class);
