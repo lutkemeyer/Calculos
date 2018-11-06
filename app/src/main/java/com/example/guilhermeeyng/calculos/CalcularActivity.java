@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +15,7 @@ import android.widget.Toast;
 
 import com.example.guilhermeeyng.calculos.entidades.Calculo;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-
-import library.Expression;
 
 public class CalcularActivity extends AppCompatActivity {
 
@@ -49,7 +42,7 @@ public class CalcularActivity extends AppCompatActivity {
         Bundle args = getIntent().getExtras();
 
         if(args != null){
-            calculo = (Calculo)args.getSerializable("parametro-calculo");
+            calculo = (Calculo)args.getSerializable(getString(R.string.parametro));
 
             lblFormula.setText(calculo.getFormula());
 
@@ -79,7 +72,7 @@ public class CalcularActivity extends AppCompatActivity {
 
                 lblNomeVariavel.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 txtValorVariavel.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                txtValorVariavel.setInputType(InputType.TYPE_CLASS_NUMBER);
+                txtValorVariavel.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
                 txtValorVariavel.addTextChangedListener(listenerDigitacao);
 
@@ -90,13 +83,7 @@ public class CalcularActivity extends AppCompatActivity {
                 llContainer.addView(txtValorVariavel);
 
             }
-            mostra("veio parametro");
-        }else{
-            mostra("nao veio parametro");
         }
-
-
-
     }
 
     public void onClickCalcular(View view){
@@ -113,11 +100,11 @@ public class CalcularActivity extends AppCompatActivity {
 
         }else{
             lblResultado.setText("-");
-            mostra("Preencha todos os campos");
+            toast(getString(R.string.toast_preencha_todos_campos));
         }
     }
 
-    public void mostra(String s){
+    public void toast(String s){
         Toast.makeText(CalcularActivity.this, s, Toast.LENGTH_SHORT).show();
     }
     public boolean podeCalcular(){
@@ -127,7 +114,6 @@ public class CalcularActivity extends AppCompatActivity {
                 podeCalcular = false;
             }
         }
-
         btnCalcular.setEnabled(podeCalcular);
         return podeCalcular;
     }

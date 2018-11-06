@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculos</string>
+    <string name="nome_tela_edicao">Editar</string>
+    <string name="nome_tela_calcular">Calcular</string>
+    <string name="parametro">parametro-calculo</string>
+    <string name="toast_calculo_valido">Seu cálculo é válido</string>
+    <string name="toast_calculo_nao_valido">Seu cálculo não é válido</string>
+    <string name="toast_campos_vazios">Campos vazios</string>
+    <string name="toast_calculo_salvo">Calculo salvo</string>
+    <string name="toast_preencha_todos_campos">Preencha todos os campos</string>
 </resources>

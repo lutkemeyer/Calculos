@@ -3,8 +3,6 @@ package com.example.guilhermeeyng.calculos;
 import com.example.guilhermeeyng.calculos.entidades.Calculo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 
 public class BancoDeDados {
 

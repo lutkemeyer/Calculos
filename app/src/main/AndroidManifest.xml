@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.guilhermeeyng.calculos">
 
     <application
@@ -15,8 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalcularActivity"/>
-        <activity android:name=".EdicaoActivity"/>
+        <activity
+            android:name=".CalcularActivity"
+            android:label="@string/nome_tela_calcular"/>
+        <activity
+            android:name=".EdicaoActivity"
+            android:label="@string/nome_tela_edicao"/>
     </application>
 
 </manifest>

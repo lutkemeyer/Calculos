@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +15,7 @@ import com.example.guilhermeeyng.calculos.entidades.Calculo;
 
 public class EdicaoActivity extends AppCompatActivity {
 
-    private boolean isEditando = false;
+    private boolean isEditando;
 
     private Calculo calculo;
     private EditText txtFormula, txtNome;
@@ -36,13 +35,13 @@ public class EdicaoActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
 
         Bundle args = getIntent().getExtras();
-        calculo = (Calculo) args.getSerializable("parametro-calculo");
+        calculo = (Calculo) args.getSerializable(getString(R.string.parametro));
 
         if(calculo.getNome().isEmpty()){ // se o nome for vazio, é porque está criando
             isEditando = false;
         }else{ // se ja tiver nome, é porque esta editando
             isEditando = true;
-            calculo = (Calculo) args.getSerializable("parametro-calculo");
+            calculo = (Calculo) args.getSerializable(getString(R.string.parametro));
             txtNome.setText(calculo.getNome());
             txtFormula.setText(calculo.getFormula());
             btnSalvar.setEnabled(true);
@@ -60,17 +59,15 @@ public class EdicaoActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) { }
         });
     }
-
     public void onClickCalcular(View view){
         if(validar()){
             Intent it = new Intent(EdicaoActivity.this, CalcularActivity.class);
             Bundle args = new Bundle();
-            args.putSerializable("parametro-calculo", calculo);
+            args.putSerializable(getString(R.string.parametro), calculo);
             it.putExtras(args);
             startActivityForResult(it, 0);
         }
     }
-
     public void onClickValidar(View view){
         validar();
     }
@@ -82,16 +79,16 @@ public class EdicaoActivity extends AppCompatActivity {
                 calculo.setExpressao(digitado);
                 btnCalcular.setEnabled(true);
                 btnSalvar.setEnabled(true);
-                mostra("Seu cálculo é válido");
+                toast(getString(R.string.toast_calculo_valido));
             }else{
-                mostra("Seu cálculo não é válido");
+                toast(getString(R.string.toast_calculo_nao_valido));
                 btnCalcular.setEnabled(false);
                 btnSalvar.setEnabled(false);
                 valido = false;
             }
         }else{
             valido = false;
-            mostra("Campos vazios");
+            toast(getString(R.string.toast_campos_vazios));
         }
         return valido;
     }
@@ -99,11 +96,11 @@ public class EdicaoActivity extends AppCompatActivity {
         if(validar()){
             calculo.setExpressao(txtFormula.getText().toString());
             BancoDeDados.CALCULOS.add(calculo);
-            mostra("Calculo salvo");
+            toast(getString(R.string.toast_calculo_salvo));
             onBackPressed();
         }
     }
-    public void mostra(String s){
+    public void toast(String s){
         Toast.makeText(EdicaoActivity.this, s, Toast.LENGTH_SHORT).show();
     }
     @Override

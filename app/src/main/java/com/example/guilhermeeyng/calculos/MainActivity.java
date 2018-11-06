@@ -26,16 +26,14 @@ public class MainActivity extends AppCompatActivity {
         new BancoDeDados();
         listaCalculos.setAdapter(new SimpleAdapter(MainActivity.this, BancoDeDados.CALCULOS));
     }
-
-    public void AdicionaFormula(View view){
+    public void adicionaFormula(View view){
         Intent intent = new Intent(this, EdicaoActivity.class);
         Bundle args = new Bundle();
         Calculo calculo = new Calculo();
-        args.putSerializable("parametro-calculo", calculo);
+        args.putSerializable(getString(R.string.parametro), calculo);
         intent.putExtras(args);
         startActivityForResult(intent, 0);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         ((SimpleAdapter)listaCalculos.getAdapter()).notifyDataSetChanged();
