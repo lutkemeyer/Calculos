@@ -14,4 +14,5 @@
     <string name="btn_salvar">Salvar</string>
     <string name="lbl_formula">Fórmula:</string>
     <string name="lbl_nome">Nome:</string>
+    <string name="toast_erro_ao_calcular">Erro ao calcular, digite os valores corretamente</string>
 </resources>

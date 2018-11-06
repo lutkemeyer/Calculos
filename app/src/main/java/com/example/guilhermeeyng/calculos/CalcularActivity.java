@@ -96,8 +96,11 @@ public class CalcularActivity extends AppCompatActivity {
                 calculo.setVariavel(chaves.get(i), valor);
             }
 
-            lblResultado.setText(calculo.calcular() + "");
-
+            try {
+                lblResultado.setText(String.format("%.2f", calculo.calcular()));
+            }catch(Exception e){
+                toast(getString(R.string.toast_erro_ao_calcular));
+            }
         }else{
             lblResultado.setText("-");
             toast(getString(R.string.toast_preencha_todos_campos));
