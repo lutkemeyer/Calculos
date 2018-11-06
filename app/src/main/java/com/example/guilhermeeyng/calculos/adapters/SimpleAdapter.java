@@ -75,14 +75,14 @@ public class SimpleAdapter extends BaseAdapter {
                             case R.id.mn_calcular:
                                 Intent itCalcular = new Intent(activity, CalcularActivity.class);
                                 Bundle argsCalcular = new Bundle();
-                                argsCalcular.putSerializable("parametro-calculo", calculos.get(position));
+                                argsCalcular.putSerializable(activity.getString(R.string.parametro), calculos.get(position));
                                 itCalcular.putExtras(argsCalcular);
                                 activity.startActivityForResult(itCalcular, 0);
                                 break;
                             case R.id.mn_editar:
                                 Intent itEditar = new Intent(activity, EdicaoActivity.class);
                                 Bundle argsEditar = new Bundle();
-                                argsEditar.putSerializable("parametro-calculo", calculos.get(position));
+                                argsEditar.putSerializable(activity.getString(R.string.parametro), calculos.get(position));
                                 itEditar.putExtras(argsEditar);
                                 activity.startActivityForResult(itEditar, 0);
                                 break;
