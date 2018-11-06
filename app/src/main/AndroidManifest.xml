@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.guilhermeeyng.calculos">
+    package="com.example.bordignon.calculos">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.example.bordignon.calculos.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalcularActivity"
+            android:name="com.example.bordignon.calculos.CalcularActivity"
             android:label="@string/nome_tela_calcular"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".EdicaoActivity"
+            android:name="com.example.bordignon.calculos.EdicaoActivity"
             android:label="@string/nome_tela_edicao"
             android:screenOrientation="portrait"/>
     </application>
