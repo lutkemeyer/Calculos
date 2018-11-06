@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EdicaoActivity"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp">
+    android:layout_marginLeft="@dimen/margin_grande"
+    android:layout_marginRight="@dimen/margin_grande">
 
     <TextView
         android:layout_width="match_parent"

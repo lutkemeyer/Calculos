@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_pequena">5dp</dimen>
+    <dimen name="margin_grande">20dp</dimen>
+    <dimen name="elevation_floating_button">20dp</dimen>
+    <dimen name="margin_media">8dp</dimen>
+</resources>
