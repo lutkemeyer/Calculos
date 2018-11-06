@@ -23,10 +23,10 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_media"
-        android:layout_marginEnd="@dimen/margin_media"
-        android:src="@android:drawable/ic_input_add"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
         android:onClick="adicionaFormula"
+        android:src="@drawable/ic_mais"
         app:elevation="@dimen/elevation_floating_button"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
